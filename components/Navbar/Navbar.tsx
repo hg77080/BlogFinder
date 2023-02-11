@@ -88,10 +88,9 @@ const Navbar = () => {
         <Box className="sm:hidden">
           <InputGroup width="400px">
             <Input type="text" placeholder="Search" />
-            <InputRightElement
-              pointerEvents="none"
-              children={<Search2Icon color="gray.600" />}
-            />
+            <InputRightElement pointerEvents="none">
+              <Search2Icon color="gray.600" />
+            </InputRightElement>
           </InputGroup>
         </Box>
       </Flex>
