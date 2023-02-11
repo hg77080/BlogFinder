@@ -16,9 +16,9 @@ body {
   overflow-x: hidden;
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
-}
+} */
 
 a {
   color: inherit;
@@ -29,4 +29,66 @@ a {
   html {
     color-scheme: dark;
   }
+}
+.w-md-editor{
+  border-radius: 0;
+}
+.w-md-editor-toolbar {
+  background-color: #f9f9f9 !important;
+  border-radius: 0;
+  border: 0;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+.w-md-editor-toolbar ul li button{
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+}
+
+.w-md-editor-toolbar-divider {
+  display: none !important;
+}
+
+.w-md-editor-toolbar ul li button {
+  color: #000 !important;
+  height: 30px !important;
+}
+
+.w-md-editor-toolbar ul:nth-child(1) li:nth-child(10n+1) {
+  display: none !important;
+}
+
+.w-md-editor-toolbar ul:nth-child(2) li:nth-child(n+3) {
+  display: none !important;
+}
+
+.w-md-editor-toolbar ul li button:hover {
+  background-color: rgb(59, 73, 223, 0.4) !important;
+}
+.w-md-editor-toolbar ul li [data-name="strikethrough"]{
+  display: none !important;
+}
+.w-md-editor-toolbar ul li [data-name="hr"]{
+  display: none !important;
+}
+.w-md-editor-toolbar ul li [data-name="title2"]{
+  display: none !important;
+}
+.w-md-editor-toolbar ul li [data-name="checked-list"]{
+  display: none !important;
+}
+
+.w-md-editor-toolbar ul li button svg {
+  height: 20px !important;
+  width: 20px !important;
+}
+.w-md-editor-content {
+  font-size: 18px !important;
+  line-height: 20px !important;
+  color: rgb(23, 23, 23) !important;
+  width: 100% !important;
+  padding-left: 32px;
+  font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    Courier, monospace;
 }

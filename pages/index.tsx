@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+
 
 export default function Home() {
   return (
@@ -11,7 +12,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello</h1>
+        <div className="h-screen bg-grey-50">
+          <Navbar />
+          {/* <Editor/> */}
+        </div>
       </main>
     </>
   );
