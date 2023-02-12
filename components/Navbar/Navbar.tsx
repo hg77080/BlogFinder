@@ -28,7 +28,7 @@ import { signOut } from "next-auth/react";
 const MenuItemsList = [
   {
     title: "Create Post",
-    href: "/createpost",
+    href: "/create",
   },
 ];
 const UserMenuButton = ({ user }: { user: any }) => {

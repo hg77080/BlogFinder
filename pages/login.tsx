@@ -1,14 +1,13 @@
-import { Button, Divider, Flex, HStack } from "@chakra-ui/react";
+import { Button, Divider, Flex} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import React from "react";
 import Link from "next/link";
-import { signIn, signOut } from "next-auth/react";
-import { useSessionCustom } from "@/lib/next-auth-react-query";
+import { signIn } from "next-auth/react";
 import Navbar from "@/components/Navbar/Navbar";
 
-const getEnterMethods = (signup = false) => [
+const LoginMethods = (signup = false) => [
   {
     name: "google",
     icon: <FcGoogle size={20} />,
@@ -29,17 +28,10 @@ const getEnterMethods = (signup = false) => [
 
 function Login() {
   const { query } = useRouter();
-  const { session, status } = useSessionCustom();
-  const router = useRouter();
-
-  // if (session && session.user) {
-  //   router.push('/');
-  //   return null;
-  // }
   return (
     <div className="flex flex-col w-full relative h-screen bg-grey-50">
       <Navbar />
-      <div className="flex justify-center items-center w-full pt-2 pb-10 bg-grey-50">
+      <div className="flex m-auto w-full bg-grey-50">
         <div className="flex flex-col items-center w-full md:w-[640px] bg-white rounded-md p-5 mx-auto  border-[1px] border-grey-200">
           <h2 className="text-[20px] text-grey-900 font-bold md:text-[30px] text-center">
             Welcome to DEV Community 👩‍💻👨‍💻
@@ -49,7 +41,7 @@ function Login() {
           </span>
 
           <div className="flex flex-col gap-2 w-full my-8">
-            {getEnterMethods(query?.state === "newuser").map((login) => (
+            {LoginMethods(query?.state === "newuser").map((login) => (
               <Button
                 key={login.name}
                 className={`w-full ${login.textColor} ${login.bg} ${login.hover} text-base p-4 h-12`}
@@ -62,7 +54,6 @@ function Login() {
 
             <Flex className="justify-center items-center mt-2">
               <Divider orientation="horizontal" />
-
               {query?.state === "newuser" ? (
                 <div className="flex items-center justify-center text-sm min-w-max">
                   Already have account?

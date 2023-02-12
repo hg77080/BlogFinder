@@ -1,4 +1,4 @@
-import { useQuery, QueryClientConfig } from 'react-query';
+import { useQuery} from 'react-query';
 import { useRouter } from 'next/router';
 
 export async function fetchSession() {

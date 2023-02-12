@@ -8,12 +8,12 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "@/styles/globals.css";
 import type { NextComponentType } from "next";
 type CustomAppProps = AppProps & {
-  Component: NextComponentType & { auth?: boolean }; // add auth type
+  Component: NextComponentType & { auth?: boolean };
 };
 export default function App({ Component, pageProps }: CustomAppProps) {
   const emotionCache = createCache({
     key: "emotion-css-cache",
-    prepend: true, // ensures styles are prepended to the <head>, instead of appended
+    prepend: true,
   });
   const client = new QueryClient();
   return (
@@ -34,8 +34,7 @@ export default function App({ Component, pageProps }: CustomAppProps) {
 }
 
 function Auth({ children }: { children: ReactNode }) {
-  // if `{ required: true }` is supplied, `status` can only be "loading" or "authenticated"
-  const { session, status } = useSessionCustom({ required: true });
+  const { status } = useSessionCustom({ required: true });
   if (status === "loading") {
     return <div>Loading...</div>;
   }

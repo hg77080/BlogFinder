@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navbar from "@/components/Navbar/Navbar";
-
+import Editor from "@/components/Editor";
+import { Box } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -12,10 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="h-screen bg-grey-50">
+        <Box className="h-screen bg-grey-50">
           <Navbar />
-          {/* <Editor/> */}
-        </div>
+        </Box>
       </main>
     </>
   );

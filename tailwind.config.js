@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     colors: {
       background: "#1d1d1d",
+      borderColor:"#dfdfe0",
       cyan: "#08FDD8",
       brick: "#FD2155",
       black: "#000000",
